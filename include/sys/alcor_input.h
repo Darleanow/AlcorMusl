@@ -1,12 +1,12 @@
 /*
- * <alcor2/input.h> — userland keyboard-layout and mouse verbs.
+ * <sys/alcor_input.h> — userland keyboard-layout and mouse verbs.
  *
  * Part of the Alcor2 libc contract (forked musl). The ioctl request codes are
  * an implementation detail of these wrappers; callers deal only in verbs,
  * scalars, and the layout enum.
  */
-#ifndef _ALCOR2_INPUT_H
-#define _ALCOR2_INPUT_H
+#ifndef _SYS_ALCOR_INPUT_H
+#define _SYS_ALCOR_INPUT_H
 
 #include <fcntl.h>
 #include <stdint.h>
@@ -100,4 +100,4 @@ static inline void alcor_mouse_close(int fd)
 #ifdef __cplusplus
 }
 #endif
-#endif /* _ALCOR2_INPUT_H */
+#endif /* _SYS_ALCOR_INPUT_H */

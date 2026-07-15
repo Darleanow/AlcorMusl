@@ -1,11 +1,11 @@
 /*
- * <alcor2/timer.h> — userland control of the system tick rate.
+ * <sys/alcor_timer.h> — userland control of the system tick rate.
  *
  * Part of the Alcor2 libc contract (forked musl). Latency-sensitive apps vote
  * for an elevated PIT rate; the vote is refcounted and auto-released on exit.
  */
-#ifndef _ALCOR2_TIMER_H
-#define _ALCOR2_TIMER_H
+#ifndef _SYS_ALCOR_TIMER_H
+#define _SYS_ALCOR_TIMER_H
 
 #include <stdint.h>
 #include <sys/ioctl.h>
@@ -31,4 +31,4 @@ static inline int alcor_timer_fast(int on)
 #ifdef __cplusplus
 }
 #endif
-#endif /* _ALCOR2_TIMER_H */
+#endif /* _SYS_ALCOR_TIMER_H */

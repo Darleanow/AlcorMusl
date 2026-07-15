@@ -1,13 +1,13 @@
 /*
- * <alcor2/console.h> — userland control of the framebuffer console.
+ * <sys/alcor_console.h> — userland control of the framebuffer console.
  *
  * Part of the Alcor2 libc contract (forked musl). Lets a graphical app hand
  * the framebuffer back and forth with the kernel console and submit a glyph
  * atlas. The atlas descriptor is a genuine multi-field record, so it is a
  * public (but stable) struct; the ioctl codes stay private.
  */
-#ifndef _ALCOR2_CONSOLE_H
-#define _ALCOR2_CONSOLE_H
+#ifndef _SYS_ALCOR_CONSOLE_H
+#define _SYS_ALCOR_CONSOLE_H
 
 #include <stdint.h>
 #include <sys/ioctl.h>
@@ -65,4 +65,4 @@ static inline int alcor_console_reclaim(void)
 #ifdef __cplusplus
 }
 #endif
-#endif /* _ALCOR2_CONSOLE_H */
+#endif /* _SYS_ALCOR_CONSOLE_H */

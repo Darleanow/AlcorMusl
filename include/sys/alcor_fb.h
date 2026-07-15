@@ -1,12 +1,12 @@
 /*
- * <alcor2/fb.h> — userland access to the Alcor2 linear framebuffer.
+ * <sys/alcor_fb.h> — userland access to the Alcor2 linear framebuffer.
  *
  * Part of the Alcor2 libc contract (forked musl). Wraps SYS_ALCOR_FB_INFO /
  * SYS_ALCOR_FB_MMAP behind one verb; the kernel's packed geometry record stays
  * private to the wrapper and never reaches callers.
  */
-#ifndef _ALCOR2_FB_H
-#define _ALCOR2_FB_H
+#ifndef _SYS_ALCOR_FB_H
+#define _SYS_ALCOR_FB_H
 
 #include <stdint.h>
 #include <sys/syscall.h>
@@ -59,4 +59,4 @@ static inline int alcor_fb_open(alcor_fb_t *out)
 #ifdef __cplusplus
 }
 #endif
-#endif /* _ALCOR2_FB_H */
+#endif /* _SYS_ALCOR_FB_H */
