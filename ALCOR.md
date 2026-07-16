@@ -12,7 +12,7 @@ verb headers below wrap them for applications.
 
 | File | Contents |
 | --- | --- |
-| `arch/x86_64/bits/alcor_syscall.h` | Custom syscall numbers (1024+ band) |
+| `arch/x86_64/bits/alcor_syscall.h` | Custom syscall numbers (bit-31 namespace) |
 | `arch/generic/bits/alcor_fb.h` | Framebuffer geometry struct |
 | `arch/generic/bits/alcor_input.h` | Keyboard layouts, mouse event, input ioctls |
 | `arch/generic/bits/alcor_console.h` | Console atlas struct and ioctls |
@@ -22,8 +22,9 @@ Contract rules:
 
 - `bits/alcor_*.h` stay self-contained: `stdint.h` types only, no libc
   dependencies, so any future consumer (or libc) can vendor them verbatim.
-- Custom syscall numbers live in the 1024+ band, above anything upstream
-  assigns, so upstream updates can never collide.
+- Custom syscall numbers carry `ALCOR_SYSCALL_BIT` (bit 31). Upstream numbers
+  are positive C ints with bit 30 reserved for the x32 marker, so no upstream
+  number can ever enter this space: collision is impossible by construction.
 - Changes are additive whenever possible: new numbers, new fields at the end
   of structs. A breaking change bumps `ALCOR_ABI_VERSION`.
 - One declaration per doc comment, no em-dashes, doxygen style, following the

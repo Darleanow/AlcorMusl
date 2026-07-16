@@ -9,16 +9,25 @@
 #define _BITS_ALCOR_SYSCALL_H
 
 /** @brief Version of the Alcor2 kernel/userland ABI described by bits/alcor_*.h. */
-#define ALCOR_ABI_VERSION 1
+#define ALCOR_ABI_VERSION 2
+
+/**
+ * @brief Namespace bit separating Alcor2 syscalls from upstream numbers.
+ *
+ * Upstream syscall numbers are positive C ints and bit 30 is the x32 marker,
+ * so no present or future upstream number can ever carry bit 31. The Alcor2
+ * space is disjoint by construction and never needs renumbering.
+ */
+#define ALCOR_SYSCALL_BIT 0x80000000U
 
 /** @brief Register the TTY foreground PID that receives SIGINT on Ctrl+C. */
-#define __NR_ALCOR_SET_FG_PID	1024
+#define __NR_ALCOR_SET_FG_PID	(ALCOR_SYSCALL_BIT | 1)
 
 /** @brief Fill a caller-provided ::alcor_fb_info_t with framebuffer geometry. */
-#define __NR_ALCOR_FB_INFO	1025
+#define __NR_ALCOR_FB_INFO	(ALCOR_SYSCALL_BIT | 2)
 
 /** @brief Map the linear framebuffer into the calling process. */
-#define __NR_ALCOR_FB_MMAP	1026
+#define __NR_ALCOR_FB_MMAP	(ALCOR_SYSCALL_BIT | 3)
 
 /** @brief Alias of ::__NR_ALCOR_SET_FG_PID in the libc naming convention. */
 #define SYS_ALCOR_SET_FG_PID	__NR_ALCOR_SET_FG_PID
