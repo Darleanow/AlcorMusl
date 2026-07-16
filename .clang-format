@@ -1,0 +1,3 @@
+# musl code keeps musl style; parent-repo editors must not reformat the fork.
+DisableFormat: true
+SortIncludes: false

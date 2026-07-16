@@ -384,9 +384,6 @@
 #define __NR_listns		470
 
 
-/* Alcor2 custom syscalls - reserved band 497-499, kept well clear of the
- * Linux/musl syscall-number frontier (currently 470). Kernel side of this
- * contract lives in <alcor2/sys/syscall.h>; keep the two in sync. */
-#define __NR_ALCOR_SET_FG_PID	497
-#define __NR_ALCOR_FB_INFO	498
-#define __NR_ALCOR_FB_MMAP	499
+/* Alcor2 custom syscalls live in their own fragment so upstream updates to
+ * this file never touch them. */
+#include <bits/alcor_syscall.h>

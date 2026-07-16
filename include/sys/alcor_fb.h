@@ -2,14 +2,12 @@
  * @file include/sys/alcor_fb.h
  * @brief Userland access to the Alcor2 linear framebuffer.
  *
- * Part of the Alcor2 libc contract (forked musl). Wraps @c SYS_ALCOR_FB_INFO
- * and @c SYS_ALCOR_FB_MMAP behind one verb; the kernel's packed geometry
- * record stays private to the wrapper and never reaches callers.
+ * Verb wrapper over the ABI declared in <bits/alcor_fb.h>.
  */
 #ifndef _SYS_ALCOR_FB_H
 #define _SYS_ALCOR_FB_H
 
-#include <stdint.h>
+#include <bits/alcor_fb.h>
 #include <sys/syscall.h>
 #include <unistd.h>
 
@@ -34,13 +32,7 @@ typedef struct
  */
 static inline int alcor_fb_open(alcor_fb_t *out)
 {
-	/* Mirrors the kernel's alcor_fb_info_t byte for byte — keep in sync. */
-	struct
-	{
-		uint32_t width, height, pitch;
-		uint16_t bpp, _pad;
-		uint64_t byte_len, map_size;
-	} __attribute__((packed)) info;
+	alcor_fb_info_t info;
 
 	if (!out)
 		return -1;
