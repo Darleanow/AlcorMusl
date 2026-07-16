@@ -1,9 +1,6 @@
 /**
  * @file arch/generic/bits/alcor_timer.h
- * @brief Alcor2 system timer ABI, single source of the contract.
- *
- * Consumed by the Alcor2 kernel and by <sys/alcor_timer.h>. Must stay
- * self-contained: fixed-width integer types only, no libc dependencies.
+ * @brief System timer ABI: the fast tick rate ioctl.
  */
 #ifndef _BITS_ALCOR_TIMER_H
 #define _BITS_ALCOR_TIMER_H

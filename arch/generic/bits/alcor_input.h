@@ -1,9 +1,6 @@
 /**
  * @file arch/generic/bits/alcor_input.h
- * @brief Alcor2 keyboard and mouse ABI, single source of the contract.
- *
- * Consumed by the Alcor2 kernel and by <sys/alcor_input.h>. Must stay
- * self-contained: fixed-width integer types only, no libc dependencies.
+ * @brief Keyboard and mouse ABI: layouts, event record, ioctl codes.
  *
  * ioctl request encoding: bit 30 write flag, bits 23:16 argument size,
  * bits 15:8 subsystem group, bits 7:0 command ordinal.

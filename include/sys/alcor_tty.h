@@ -2,8 +2,7 @@
  * @file include/sys/alcor_tty.h
  * @brief Userland TTY job-control helper.
  *
- * Part of the Alcor2 libc contract (forked musl). Wraps
- * @c SYS_ALCOR_SET_FG_PID, which has no standard POSIX equivalent.
+ * Wraps @c SYS_ALCOR_SET_FG_PID, which has no standard POSIX equivalent.
  */
 #ifndef _SYS_ALCOR_TTY_H
 #define _SYS_ALCOR_TTY_H

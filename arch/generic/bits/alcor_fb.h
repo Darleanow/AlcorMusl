@@ -1,16 +1,13 @@
 /**
  * @file arch/generic/bits/alcor_fb.h
- * @brief Alcor2 framebuffer ABI, single source of the contract.
- *
- * Consumed by the Alcor2 kernel and by <sys/alcor_fb.h>. Must stay
- * self-contained: fixed-width integer types only, no libc dependencies.
+ * @brief Framebuffer geometry record returned by the ALCOR_FB_INFO syscall.
  */
 #ifndef _BITS_ALCOR_FB_H
 #define _BITS_ALCOR_FB_H
 
 #include <stdint.h>
 
-/** @brief Framebuffer geometry filled by the ALCOR_FB_INFO syscall. */
+/** @brief Geometry of the linear framebuffer. */
 typedef struct __attribute__((packed))
 {
 	uint32_t width;    /**< Width in pixels. */

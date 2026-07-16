@@ -1,9 +1,6 @@
 /**
  * @file arch/generic/bits/alcor_console.h
- * @brief Alcor2 framebuffer console ABI, single source of the contract.
- *
- * Consumed by the Alcor2 kernel and by <sys/alcor_console.h>. Must stay
- * self-contained: fixed-width integer types only, no libc dependencies.
+ * @brief Framebuffer console ABI: glyph atlas record and console ioctls.
  */
 #ifndef _BITS_ALCOR_CONSOLE_H
 #define _BITS_ALCOR_CONSOLE_H

@@ -1,9 +1,9 @@
 /**
  * @file arch/x86_64/bits/alcor_syscall.h
- * @brief Alcor2 custom syscall numbers, single source of the contract.
+ * @brief Alcor2 custom syscall numbers.
  *
- * The 1024+ band can never collide with numbers assigned upstream.
- * Both spellings are defined here so this file needs no sed processing.
+ * Defines both the __NR_ and SYS_ spellings so musl's syscall.h generator
+ * never has to rewrite this file.
  */
 #ifndef _BITS_ALCOR_SYSCALL_H
 #define _BITS_ALCOR_SYSCALL_H
