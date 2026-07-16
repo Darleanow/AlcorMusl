@@ -1,5 +1,5 @@
 /**
- * @file arch/x86_64/bits/alcor_syscall.h
+ * @file arch/generic/bits/alcor_syscall.h
  * @brief Alcor2 custom syscall numbers.
  *
  * Defines both the __NR_ and SYS_ spellings so musl's syscall.h generator
