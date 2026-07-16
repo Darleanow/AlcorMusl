@@ -1,8 +1,8 @@
 # AlcorMusl
 
 Fork of musl libc carrying the Alcor2OS userland ABI. Upstream musl is left
-untouched; every Alcor2 addition is a new file, plus one `#include` line at the
-end of `arch/x86_64/bits/syscall.h.in`.
+untouched; every Alcor2 addition is a new file, plus one `#include` line in
+`include/sys/syscall.h`.
 
 ## The ABI contract
 
@@ -12,7 +12,7 @@ verb headers below wrap them for applications.
 
 | File | Contents |
 | --- | --- |
-| `arch/x86_64/bits/alcor_syscall.h` | Custom syscall numbers (bit-31 namespace) |
+| `arch/generic/bits/alcor_syscall.h` | Custom syscall numbers (bit-31 namespace) |
 | `arch/generic/bits/alcor_fb.h` | Framebuffer geometry struct |
 | `arch/generic/bits/alcor_input.h` | Keyboard layouts, mouse event, input ioctls |
 | `arch/generic/bits/alcor_console.h` | Console atlas struct and ioctls |
