@@ -1,3 +1,5 @@
+#include <bits/alcor_syscall.h>
+
 #define __NR_read				0
 #define __NR_write				1
 #define __NR_open				2
@@ -382,8 +384,3 @@
 #define __NR_file_getattr	468
 #define __NR_file_setattr	469
 #define __NR_listns		470
-
-
-/* Alcor2 custom syscalls live in their own fragment so upstream updates to
- * this file never touch them. */
-#include <bits/alcor_syscall.h>
